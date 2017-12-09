@@ -1,0 +1,8 @@
+.note-editor {
+    width: 100%;
+    font-size: 25px;
+
+    /* remove the ugly ass border */
+    outline: 0px solid transparent;
+    padding-top: 15px;
+}
