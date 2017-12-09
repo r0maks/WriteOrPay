@@ -3,13 +3,11 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { NoteEditorComponent } from './note-editor/note-editor.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NoteEditorComponent
+    AppComponent
   ],
   imports: [
     BrowserModule
