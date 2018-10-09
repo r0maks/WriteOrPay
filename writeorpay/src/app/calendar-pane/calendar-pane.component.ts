@@ -30,8 +30,8 @@ export class CalendarPaneComponent implements OnInit {
 
     this.yearText = this.selectedMonth.format('YYYY');
     this.monthText = this.selectedMonth.format('MMMM');
-
     this.numDaysInMonth = this.selectedMonth.daysInMonth();
+    
     this.daysInMonth = [];
     for (let i = 0; i < this.numDaysInMonth; i++) {
       this.daysInMonth.push({date: i + 1});
