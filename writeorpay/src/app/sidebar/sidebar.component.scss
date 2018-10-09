@@ -1,0 +1,19 @@
+.sidebar {
+    border: 1px dashed #AAA; /* TODO: Remove - just for visibility right now */
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    .counts-panel {
+        height: 250px;
+    }
+
+    .calendar-panel {
+        height: 250px;
+    }
+
+    .sidebar-controls-panel {
+        height: 250px;
+    }
+}

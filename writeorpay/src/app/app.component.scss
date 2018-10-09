@@ -1,0 +1,14 @@
+.app-container {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+
+    .app-content {
+        flex-basis: 80%;
+        margin-right: 20px;
+    }
+
+    .sidebar-content {
+        flex-basis: 20%;
+    }
+}
