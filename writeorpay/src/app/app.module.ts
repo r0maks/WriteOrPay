@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { NoteEditorComponent } from './note-editor/note-editor.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CountTileComponent } from './count-tile/count-tile.component';
+import { CalendarPaneComponent } from './calendar-pane/calendar-pane.component';
 
 
 @NgModule({
@@ -13,6 +14,7 @@ import { CountTileComponent } from './count-tile/count-tile.component';
     NoteEditorComponent,
     SidebarComponent,
     CountTileComponent,
+    CalendarPaneComponent,
   ],
   imports: [
     BrowserModule

@@ -1,0 +1,37 @@
+<div class="calendar-pane">
+  <div class="calendar-header">
+    <div class="calendar-arrow" (click)="monthDown()">
+      <
+    </div>
+    <span>{{monthText}}, {{yearText}}</span>
+    <div class="calendar-arrow" (click)="monthUp()">
+      >
+    </div>
+  </div>
+  <div class="calendar-days">
+    <div class="calendar-day">
+      Su
+    </div>
+    <div class="calendar-day">
+      Mo
+    </div>
+    <div class="calendar-day">
+      Tu
+    </div>
+    <div class="calendar-day">
+      We
+    </div>
+    <div class="calendar-day">
+      Th
+    </div>
+    <div class="calendar-day">
+      Fr
+    </div>
+    <div class="calendar-day">
+      Sa
+    </div>
+    <div class="calendar-day" *ngFor="let day of daysInMonth">
+      {{day?.date}}
+    </div>
+  </div>
+</div>
