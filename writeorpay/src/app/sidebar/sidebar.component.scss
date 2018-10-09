@@ -7,6 +7,15 @@
 
     .counts-panel {
         height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        
+        .counts-panel-row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
     }
 
     .calendar-panel {

@@ -1,0 +1,15 @@
+.count-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .count-tile-count {
+        font-size: 22px;
+        font-weight: 300;
+    }
+
+    .count-tile-value {
+        font-size: 25px;
+    }
+}
