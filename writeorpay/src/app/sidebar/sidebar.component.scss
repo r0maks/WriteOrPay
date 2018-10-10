@@ -25,5 +25,14 @@
 
     .sidebar-controls-panel {
         height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        .actions-pane {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
     }
 }
