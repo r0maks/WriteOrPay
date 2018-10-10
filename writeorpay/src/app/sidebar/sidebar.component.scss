@@ -1,35 +1,35 @@
 .sidebar {
     border: 1px dashed #AAA; /* TODO: Remove - just for visibility right now */
-    height: 100%;
     display: flex;
     justify-content: start;
     flex-direction: column;
-    padding: 10px;
+    padding: 15px;
 
     .counts-panel {
-        height: 250px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
+        margin-bottom: 30px;
         
         .counts-panel-row {
             display: flex;
             flex-direction: row;
-            justify-content: space-evenly;
+            justify-content: space-between;
         }
     }
 
     .calendar-panel {
-        height: 250px;
+        margin-bottom: 30px;
+        height: 225px;
     }
 
     .sidebar-controls-panel {
-        height: 250px;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
 
         .actions-pane {
+            margin-top: 30px;
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;

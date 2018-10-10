@@ -1,13 +1,13 @@
 <div class="sidebar">
     <div class="counts-panel">
         <div class="counts-panel-row">
-            <app-count-tile></app-count-tile>
-            <app-count-tile></app-count-tile>
+            <app-count-tile [metricName]="'Word Count'" [metricValue]="967"></app-count-tile>
+            <app-count-tile [metricName]="'Progress'" [metricValue]="'80%'"></app-count-tile>
         </div>
 
         <div class="counts-panel-row">
-            <app-count-tile></app-count-tile>
-            <app-count-tile></app-count-tile>
+            <app-count-tile [metricName]="'Current Streak'" [metricValue]="8"></app-count-tile>
+            <app-count-tile [metricName]="'Skip Days'" [metricValue]="9"></app-count-tile>
         </div>
 
     </div>
@@ -17,7 +17,9 @@
     <div class="sidebar-controls-panel">
         <button class="">New Entry</button>
         <div class="actions-pane">
-            <i class="fas fa-align-justify"></i>
+            <i class="fas fa-search"></i>
+            <i class="fas fa-cogs"></i>
+            <i class="fas fa-user"></i>
         </div>
     </div>
 </div>
