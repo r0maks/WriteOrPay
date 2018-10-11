@@ -7,13 +7,13 @@
 
     .counts-panel {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: space-evenly;
         margin-bottom: 30px;
         
-        .counts-panel-row {
+        .counts-panel-column {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-between;
         }
     }
