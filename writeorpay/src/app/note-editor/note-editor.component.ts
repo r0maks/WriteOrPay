@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Moment } from 'moment';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-note-editor',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteEditorComponent implements OnInit {
 
+  public today: Moment;
+
   constructor() { }
 
   ngOnInit() {
+    this.today = moment();
   }
 
 }

@@ -1,11 +1,14 @@
-.note-editor {
-    width: 100%;
-    font-size: 25px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    /* remove the ugly ass border */
-    /* outline: 0px solid transparent; */
-    padding-top: 15px;
-    word-break: break-all;
-    padding-top: 25px;
+.note-editor-container {
+    flex: 100%;
+    padding-left: 25px;
+
+    .note-editor {
+        font-size: 25px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        /* remove the ugly ass border */
+        /* outline: 0px solid transparent; */
+        word-break: break-all;
+        min-height: 300px;
+    }
 }
 
