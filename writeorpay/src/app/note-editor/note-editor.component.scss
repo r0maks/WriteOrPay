@@ -6,6 +6,15 @@
     .note-title {
         font-size: 25px;
         margin-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .fas {
+            position: relative;
+            top: -35px;
+            cursor: pointer;
+        }
     }
 
     .note-date {
