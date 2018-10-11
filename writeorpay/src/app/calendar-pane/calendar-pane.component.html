@@ -30,7 +30,7 @@
     <div class="calendar-day">
       Sa
     </div>
-    <div class="calendar-day" *ngFor="let day of daysInMonth">
+    <div class="calendar-day" *ngFor="let day of daysInMonth" [style.color]="getColor(day)">
       {{day?.date}}
     </div>
   </div>

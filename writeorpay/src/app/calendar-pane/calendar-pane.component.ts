@@ -38,6 +38,14 @@ export class CalendarPaneComponent implements OnInit {
     }
   }
 
+  getColor(day) {
+    if (day.date > 6) {
+      return 'green';
+    } else {
+      return 'red';
+    }
+  }
+
   public monthUp() {
     this.selectedMonth = this.selectedMonth.add(1, 'months');
     this.initCalendar();
