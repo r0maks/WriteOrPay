@@ -39,6 +39,5 @@ button:focus {
   
   /* Actual div */
   div[contenteditable=true] {
-    border: 1px dashed #AAA;
     padding: 5px;
   }
