@@ -10,11 +10,12 @@ import * as moment from 'moment';
 export class NoteEditorComponent implements OnInit {
 
   public today: Moment;
-
+  public formattedDate: string;
   constructor() { }
 
   ngOnInit() {
     this.today = moment();
+    this.formattedDate = this.today.format('dddd, MMMM DD, YYYY');
   }
 
 }

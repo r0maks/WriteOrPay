@@ -1,5 +1,5 @@
 .sidebar {
-    border: 1px dashed #AAA; /* TODO: Remove - just for visibility right now */
+    border-left: 1px solid #AAA;
     display: flex;
     justify-content: start;
     flex-direction: column;
@@ -9,12 +9,16 @@
         display: flex;
         flex-direction: row;
         justify-content: space-evenly;
-        margin-bottom: 30px;
+        margin-bottom: 25px;
         
         .counts-panel-column {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
+            app-count-tile {
+                margin-bottom: 15px;
+            }
         }
     }
 

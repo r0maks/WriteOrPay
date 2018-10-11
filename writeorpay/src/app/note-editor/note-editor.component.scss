@@ -1,10 +1,21 @@
 .note-editor-container {
     flex: 100%;
     padding-left: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    .note-title {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .note-date {
+        font-size: 20px;
+        margin-bottom: 20px;
+        color: #7f8c8d;
+    }
 
     .note-editor {
-        font-size: 25px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-size: 20px;
         /* remove the ugly ass border */
         /* outline: 0px solid transparent; */
         word-break: break-all;
