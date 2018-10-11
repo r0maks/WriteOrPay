@@ -25,7 +25,8 @@ button:focus {
 
 /* All font awesome icons */
 .fas {
-    color: #7f8c8d
+    color: #7f8c8d;
+    cursor: pointer;
 }
 
 
