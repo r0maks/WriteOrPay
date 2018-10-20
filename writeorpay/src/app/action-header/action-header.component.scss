@@ -1,0 +1,16 @@
+.action-header {
+    font-size: 25px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+
+    .actions {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-right: 20px;
+        flex-basis: 20%;
+    }
+}
