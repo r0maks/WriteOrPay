@@ -3,12 +3,12 @@
         <app-action-header></app-action-header>
     </div>
     <div class="app-content-container">
-        <div class="app-content">
-            <!-- <app-note-editor></app-note-editor> -->
-            <app-note-list></app-note-list>
+        <div class="app-content" [ngClass]="{'app-content-expanded' : isExpanded$ | async }">
+            <app-note-editor></app-note-editor>
+            <!-- <app-note-list></app-note-list> -->
         </div>
 
-        <div class="sidebar-content">
+        <div class="sidebar-content" [ngClass]="{'sidebar-content-minimized' : isExpanded$ | async }">
             <app-sidebar></app-sidebar>
         </div>
     </div>

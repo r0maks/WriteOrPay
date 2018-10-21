@@ -8,7 +8,7 @@ import { CalendarPaneComponent } from './calendar-pane/calendar-pane.component';
 import { NoteListComponent } from './note-list/note-list.component';
 import { ActionHeaderComponent } from './action-header/action-header.component';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './store/app.reducer';
+import { reducers } from './store/reducers';
 
 
 @NgModule({
@@ -23,7 +23,7 @@ import { reducer } from './store/app.reducer';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(reducer, {}),
+    StoreModule.forRoot(reducers),
   ],
   providers: [],
   bootstrap: [AppComponent]

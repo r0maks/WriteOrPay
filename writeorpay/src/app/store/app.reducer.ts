@@ -16,7 +16,6 @@ export const reducer : ActionReducer<State> = (state : State = initialState, act
   switch(action.type) {
    
     case appActions.TOGGLE_EXPANDER:
-    console.log('toggled');
     return {
         ... state,
         contentExpanded: !state.contentExpanded

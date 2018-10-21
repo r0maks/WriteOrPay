@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { State } from '../store/app.reducer';
 import * as AppActions from "../store/app.actions";
+import { AppState } from '../store/reducers';
 
 @Component({
   selector: 'app-action-header',
@@ -10,14 +10,13 @@ import * as AppActions from "../store/app.actions";
 })
 export class ActionHeaderComponent implements OnInit {
 
-  constructor(private _store: Store<State>) { }
+  constructor(private _store: Store<AppState>) { }
 
   ngOnInit() {
   }
 
   private collapsePanel() {
-    console.log('toggle presed');
-    this._store.dispatch(new AppActions.ToggleExpanderAction());
+    this._store.dispatch(new AppActions.ToggleExpander());
   }
 
 }
