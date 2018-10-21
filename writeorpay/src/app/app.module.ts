@@ -7,6 +7,8 @@ import { CountTileComponent } from './count-tile/count-tile.component';
 import { CalendarPaneComponent } from './calendar-pane/calendar-pane.component';
 import { NoteListComponent } from './note-list/note-list.component';
 import { ActionHeaderComponent } from './action-header/action-header.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './store/app.reducer';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { ActionHeaderComponent } from './action-header/action-header.component';
     ActionHeaderComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    StoreModule.forRoot(reducer, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]
