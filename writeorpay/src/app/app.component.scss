@@ -14,25 +14,39 @@
 
     .app-content-container {
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         flex-direction: row;
     
         .app-content {
-            flex-basis: 80%;
-            margin-right: 20px;
+            padding-left:10px;
+            border-right: 1px solid #AAA;
+            flex-basis: 75%;
 
             &-expanded {
-                flex-basis: 100%;
+                flex-basis: 97%;
             }
         }
     
         .sidebar-content {
-            flex-basis: 20%;
+            flex-basis: 25%;
 
             &-minimized {
-                flex-basis: 0%;
+                flex-basis: 3%;
                 display: none;
             }
         }
     }
+
+    .app-content-container-expanded {
+    
+        .app-content {
+            flex-basis: 97%;
+        }
+    
+        .sidebar-content {
+            flex-basis: 3%;
+            display: none;
+        }
+    }
+
 }

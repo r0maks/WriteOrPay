@@ -1,7 +1,9 @@
-<div class="action-header">
+<div class="action-header" [ngClass]="{'action-header-expanded' : isExpanded$ | async}">
+  <div class="action-placeholder">
 
+  </div>
   <div class="actions">
-    <i (click)="collapsePanel()" class="fas fa-angle-right"></i>
-    <i (click)="closeCurrentNote()" class="fas fa-times"></i>
+    <i (click)="collapsePanel()" class="fas" [ngClass]="{'fa-angle-left' : isExpanded$ | async, 'fa-angle-right' : (isExpanded$ | async) == false }"></i>
+    <i (click)="closeCurrentNote()" class="fas fa-times close-button"></i>
   </div>
 </div>

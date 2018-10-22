@@ -5,12 +5,34 @@
     flex-direction: row;
     justify-content: flex-end;
 
+    .action-placeholder {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-basis: 75%;
+    }
 
     .actions {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        padding-right: 20px;
-        flex-basis: 20%;
+        flex-basis: 25%;
+
+        .actions-minimized {
+            flex-basis: 3%;
+        }
+    }
+}
+
+.action-header-expanded {
+    .action-placeholder {
+        flex-basis: 97%;
+    }
+    .actions {
+        flex-basis: 3%;
+    }
+
+    .close-button {
+        display: none;
     }
 }
