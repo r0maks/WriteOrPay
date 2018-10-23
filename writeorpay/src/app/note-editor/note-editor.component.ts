@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Moment } from 'moment';
 import * as moment from 'moment';
 import * as AppActions from "../store/app.actions";
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { AppState } from '../store/reducers';
 import { FormControl } from '@angular/forms';
 
@@ -22,9 +22,22 @@ export class NoteEditorComponent implements OnInit {
 
   ngOnInit() {
     this.today = moment();
-    this.formattedDate = this.today.format('dddd, MMMM DD, YYYY');
     this.contentForm = new FormControl('');
     this.titleForm = new FormControl('');
+    this._store.pipe(select(a => a.appState.currentNoteId)).subscribe(currentNoteId => {
+      if (currentNoteId) {
+
+        const notes$ = this._store.pipe(select(a => a.appState.notes)).subscribe(notes => {
+          const note = notes.filter(a => a.id === currentNoteId)[0];
+          this.formattedDate = note.updatedDateFormat() || this.today.format('dddd, MMMM DD, YYYY');
+          this.contentForm.patchValue(note.content, {emitEvent: false});
+          this.titleForm.patchValue(note.title, {emitEvent: false});
+        });
+
+      } else {
+        this.formattedDate = this.today.format('dddd, MMMM DD, YYYY');
+      }
+    });
 
     this.contentForm.valueChanges.subscribe(val => {
       this.contentChanged(val);

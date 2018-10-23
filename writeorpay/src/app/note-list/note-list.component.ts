@@ -24,4 +24,8 @@ export class NoteListComponent implements OnInit {
     this._store.dispatch(new AppActions.NewNote());
   }
 
+  selectNote(noteId: string) {
+    this._store.dispatch(new AppActions.SelectNote(noteId));
+  }
+
 }

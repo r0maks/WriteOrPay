@@ -5,7 +5,7 @@
     <span class="button-text">New</span>
   </div>
   <div class="note-list-panel">
-    <div *ngFor='let note of notes$ | async' class="note-preview">
+    <div *ngFor='let note of notes$ | async' class="note-preview" (click)="selectNote(note.id)">
       <div class="note-title">
         {{note.title}}
       </div>
