@@ -4,6 +4,6 @@
   </div>
   <div class="actions">
     <i (click)="collapsePanel()" class="fas" [ngClass]="{'fa-angle-left' : isExpanded$ | async, 'fa-angle-right' : (isExpanded$ | async) == false }"></i>
-    <i (click)="closeCurrentNote()" class="fas fa-times close-button"></i>
+    <i *ngIf="noteSelected === true" (click)="closeCurrentNote()" class="fas fa-times close-button"></i>
   </div>
 </div>

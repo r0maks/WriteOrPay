@@ -4,4 +4,14 @@
     <i class="fas fa-plus"></i>
     <span class="button-text">New</span>
   </div>
+  <div class="note-list-panel">
+    <div *ngFor='let note of notes$ | async' class="note-preview">
+      <div class="note-title">
+        {{note.title}}
+      </div>
+      <div class="note-date">
+        {{note.createdDateFormat()}}
+        </div>
+    </div>
+  </div>
 </div>

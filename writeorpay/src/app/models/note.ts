@@ -1,5 +1,7 @@
-import { Moment } from "moment";
+import * as moment from 'moment';
+import { Moment } from 'moment';
 import { Guid } from "guid-typescript";
+
 
 
 export default class Note {
@@ -9,8 +11,15 @@ export default class Note {
     public title: string;
     public content: string;
 
-    // TODO: generate a new id on init
     constructor() {
         this.id = Guid.create().toString();
+        this.createdDate = moment();
+    }
+
+    public createdDateFormat(): string {
+        if (this.createdDate) {
+            return this.createdDate.format('dddd, MMMM DD, YYYY');
+        }
+        return '';
     }
 }

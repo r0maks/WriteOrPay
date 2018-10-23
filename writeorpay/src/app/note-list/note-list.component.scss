@@ -4,10 +4,30 @@
     flex-direction: column;
 
     .new-note-header {
+        margin-bottom: 20px;
         cursor: pointer;
         color: #27ae60;
         .button-text {
             font-size: 22px;
+        }
+    }
+
+    .note-list-panel {
+        margin-left: 18px;
+
+        .note-preview {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+
+            .note-title {
+                margin-bottom: 10px;
+                font-size: 25px;
+            }
+
+            .note-date {
+                font-size: 20px;
+            }
         }
     }
 }
