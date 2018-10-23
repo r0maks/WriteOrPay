@@ -32,6 +32,9 @@
     </div>
     <div class="calendar-day selectable-day" [ngClass]="{'selectable-day-today' : isToday(day?.date) }" *ngFor="let day of daysInMonth">
       {{day?.date}}
+      <div class="day-circle">
+
+      </div>
     </div>
   </div>
 </div>

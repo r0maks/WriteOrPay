@@ -25,14 +25,18 @@
         flex-wrap: wrap;
 
         .calendar-day {
-            margin-top: 15px;
             width: 14%; // (1/7) for seven days
+            height: 35px;
             text-align: center;
+            vertical-align: middle;
+            line-height: 2.3;
         }
 
         .selectable-day {
             cursor: pointer;
             transition: 0.3s;
+            border-radius:50%;
+            border: 2px;
 
             // TODO: Lucas, we need a better calendar day hover effect
             &:hover {
