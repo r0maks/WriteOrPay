@@ -1,12 +1,13 @@
 <div class="note-editor-container">
     <div class="note-title">
-        <textarea [formControl]="titleForm" contentEditable=true></textarea>
+        <textarea [formControl]="titleForm" contentEditable=true placeholder="Enter your title"></textarea>
         <!-- <div placeholder="Title" [formControl]="titleForm" contenteditable="true"></div> -->
     </div>
     <div class="note-date">
         {{formattedDate}}
     </div>
     <!-- <div class="note-editor" [formControl]="contentForm" placeholder="What's on your mind?" contenteditable="true"></div> -->
-
-    <textarea [formControl]="contentForm" contentEditable=true></textarea>
+    <div class="note-editor">
+        <textarea [formControl]="contentForm" contentEditable=true placeholder="What's today's story?"></textarea>
+    </div>    
 </div>

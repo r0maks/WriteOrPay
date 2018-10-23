@@ -1,29 +1,55 @@
 @import "../palette.scss";
 
 .note-editor-container {
+    display: flex;
+    flex-direction: column;
     flex: 100%;
-    font-family: $text-type;
-    color: $grey5;
+
 
     .note-title {
-        font-size: 26px;
         margin-bottom: 18px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        
+        textarea {
+            font-size: 26px;
+            font-family: $text-type;
+            color: $grey5;
+            resize: none;
+            border: none;
+            background-color: $grey1;
+            resize: none;
+            overflow: hidden;
+            outline: none;
+            width: 99%;
+            padding: 0px 10%;
+        }
     }
 
     .note-date {
         font-size: 18px;
         margin-bottom: 20px;
         color: $grey4;
+        width: 99%;
+        padding: 0px 10%;
     }
 
     .note-editor {
-        font-size: 20px !important;
-        word-break: break-word;
-        line-height: 28px;
         min-height: 300px;
+        textarea {
+            font-size: 20px;
+            word-break: break-word;
+            line-height: 28px;
+            font-family: $text-type;
+            color: $grey5;
+            border: none;
+            background-color: $grey1;
+            resize: none;
+            overflow: auto;
+            outline: none;
+            height: 80vh;
+            width: 99%;
+            padding: 0px 10% 10rem 10%;
+            display: inline-block;
+        }
     }
 }
 
