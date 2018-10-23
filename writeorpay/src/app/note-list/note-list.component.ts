@@ -13,9 +13,14 @@ import Note from '../models/note';
 export class NoteListComponent implements OnInit {
 
   private notes$: Observable<Note[]>;
+  private isSearching$: Observable<boolean>;
+  private searchTerm$: Observable<string>;
+
   constructor(private _store: Store<AppState>) { }
 
   ngOnInit() {
+    this.isSearching$ = this._store.pipe(select(store => store.appState.searchActive));
+    this.searchTerm$ = this._store.pipe(select(store => store.appState.searchTerms));
     this.notes$ = this._store.pipe(select(store => store.appState.notes));
   }
 

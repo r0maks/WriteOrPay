@@ -37,5 +37,27 @@
             flex-direction: row;
             justify-content: space-around;
         }
+
+        .search-bar-container {
+            margin-top: 30px;
+
+            .fa-search {
+                position: relative;
+                left: 265px;
+                top: -26px;
+            }
+
+            input {
+                width: 100%;
+                font-size: 16px;
+                display: flex;
+                border-radius: 10px;
+                border: none;
+                height: 30px;
+                padding-left: 10px;
+                box-sizing: border-box;
+            }
+            input[type=text]:focus {outline:none;}
+        }
     }
 }

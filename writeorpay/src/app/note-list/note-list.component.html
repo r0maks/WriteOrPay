@@ -1,8 +1,12 @@
 <div class="note-list">
 
-  <div class="new-note-header" (click)="newNote()">
+  <div *ngIf="!(isSearching$ | async) || !(searchTerm$ | async)" class="new-note-header" (click)="newNote()">
     <i class="fas fa-plus"></i>
     <span class="button-text">New</span>
+  </div>
+  <div *ngIf="(isSearching$ | async) && (searchTerm$ | async)" class="new-note-header">
+    <i class="fas fa-time"></i>
+    <span>Entries with "{{searchTerm$ | async}}"</span>
   </div>
   <div class="note-list-panel">
     <div *ngFor='let note of notes$ | async' class="note-preview" (click)="selectNote(note.id)">
@@ -11,7 +15,7 @@
         <i *ngIf="!note.title">Untitled</i>
       </div>
       <div class="note-date">
-        {{note.getFormattedUpdatedDate()}}
+        {{note?.getFormattedUpdatedDate()}}
         </div>
     </div>
   </div>

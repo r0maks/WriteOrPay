@@ -16,10 +16,14 @@
     </div>
     <div class="sidebar-controls-panel">
         <button (click)="newNote()" class="">New Entry</button>
-        <div class="actions-pane">
-            <i class="fas fa-search"></i>
+        <div *ngIf="searchBarVisible === false" class="actions-pane">
+            <i (click)="searchClicked()" class="fas fa-search"></i>
             <i class="fas fa-cogs"></i>
             <i class="fas fa-user"></i>
+        </div>
+        <div *ngIf="searchBarVisible === true" class="search-bar-container">
+            <input [formControl]="searchForm" type="text">
+            <i (click)="searchClicked()" class="fas fa-search"></i>
         </div>
     </div>
 </div>

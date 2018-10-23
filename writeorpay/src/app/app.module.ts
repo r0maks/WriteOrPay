@@ -11,7 +11,6 @@ import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
 @NgModule({
   declarations: [
     AppComponent,

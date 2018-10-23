@@ -8,12 +8,16 @@ export interface State {
     notes: Note[],
     contentExpanded: boolean;
     currentNoteId: string;
+    searchActive: boolean;
+    searchTerms: string;
 };
 
 export const initialState: State = {
     notes: getTestData(),
     contentExpanded: false,
     currentNoteId: null,
+    searchActive: false,
+    searchTerms: null,
 };
 
 export const reducer: ActionReducer<State> = (state: State = initialState, action: appActions.AppActions) => {
@@ -62,12 +66,22 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
                 ...state,
                 currentNoteId: action.noteId,
             };
+        case appActions.SEARCH_TOGGLED:
+            return {
+                ...state,
+                searchActive: !state.searchActive
+            };
+        case appActions.SEARCH_CHANGED:
+            return {
+                ...state,
+                searchTerms: action.searchTerms
+            };
         case appActions.NEW_NOTE:
+        const newDate = moment();
             const note = new Note();
-            const newDate = moment();
-            const notes = state.notes;
             note.createdDate = newDate;
             note.lastUpdatedDate = newDate;
+            const notes = state.notes;
             notes.unshift(note); // unshift because note should always be the first in the array
             return {
                 ...state,

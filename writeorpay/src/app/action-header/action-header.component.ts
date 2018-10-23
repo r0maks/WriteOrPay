@@ -13,11 +13,11 @@ export class ActionHeaderComponent implements OnInit {
 
   private isExpanded$: Observable<boolean>;
   private noteSelected: boolean;
+
   constructor(private _store: Store<AppState>) { }
 
   ngOnInit() {
     this.isExpanded$ = this._store.pipe(select(store => store.appState.contentExpanded));
-
     this._store.pipe(select(a => a.appState.currentNoteId)).subscribe(cn => {
       this.noteSelected = cn ? true : false;
     });

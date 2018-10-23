@@ -51,7 +51,7 @@ export class NoteEditorComponent implements OnInit {
       .subscribe(val => {
       this.content = val;
       this.contentChanged(val);
-    });;
+    });
 
     this.titleForm.valueChanges
       .pipe(debounceTime(500)) // using debounce (ms) to buffer how often changes log

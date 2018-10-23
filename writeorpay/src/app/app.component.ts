@@ -10,6 +10,7 @@ import { AppState } from './store/reducers';
 })
 export class AppComponent implements OnInit {
   title = 'app';
+
   private isExpanded$: Observable<boolean>;
   private currentNoteId$: Observable<string>;
   public edittingNote: boolean;

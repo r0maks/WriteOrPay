@@ -6,6 +6,8 @@ export const SELECT_NOTE = 'SELECT_NOTE';
 export const NEW_NOTE = 'NEW_NOTE';
 export const NOTE_CONTENT_CHANGED = 'NOTE_CONTENT_CHANGED';
 export const NOTE_TITLE_CHANGED = 'NOTE_TITLE_CHANGED';
+export const SEARCH_TOGGLED = 'SEARCH_TOGGLED';
+export const SEARCH_CHANGED = 'SEARCH_CHANGED';
 
 export class ToggleExpander implements Action {
   readonly type = TOGGLE_EXPANDER;
@@ -31,6 +33,14 @@ export class NoteTitleChanged implements Action {
   readonly type = NOTE_TITLE_CHANGED;
   constructor(public title: string) { }
 }
+export class SearchToggled implements Action {
+  readonly type = SEARCH_TOGGLED;
+  constructor() { }
+}
+export class SearchChanged implements Action {
+  readonly type = SEARCH_CHANGED;
+  constructor(public searchTerms: string) { }
+}
 
 export type AppActions
   = 
@@ -39,4 +49,6 @@ export type AppActions
   SelectNote | 
   NewNote | 
   NoteContentChanged |
-  NoteTitleChanged
+  NoteTitleChanged | 
+  SearchToggled | 
+  SearchChanged
