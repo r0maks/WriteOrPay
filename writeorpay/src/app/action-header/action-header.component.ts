@@ -22,4 +22,8 @@ export class ActionHeaderComponent implements OnInit {
     this._store.dispatch(new AppActions.ToggleExpander());
   }
 
+  private closeCurrentNote() {
+    this._store.dispatch(new AppActions.CloseCurrentNote());
+  }
+
 }

@@ -11,10 +11,20 @@ import { AppState } from './store/reducers';
 export class AppComponent implements OnInit {
   title = 'app';
   private isExpanded$: Observable<boolean>;
+  private currentNoteId$: Observable<string>;
+  public edittingNote: boolean;
 
   constructor(private _store: Store<AppState>) { }
 
   ngOnInit() {
     this.isExpanded$ = this._store.pipe(select(store => store.appState.contentExpanded));
+    this.currentNoteId$ = this._store.pipe(select(store => store.appState.currentNoteId));
+    this.currentNoteId$.subscribe(val => {
+      if (val) {
+        this.edittingNote = true;
+      } else {
+        this.edittingNote = false;
+      }
+    });
   }
 }

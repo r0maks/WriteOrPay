@@ -4,8 +4,8 @@
     </div>
     <div class="app-content-container" [ngClass]="{'app-content-container-expanded' : isExpanded$ | async }">
         <div class="app-content">
-            <app-note-editor></app-note-editor>
-            <!-- <app-note-list></app-note-list> -->
+            <app-note-editor *ngIf="edittingNote === true"></app-note-editor>
+            <app-note-list *ngIf="edittingNote === false"></app-note-list>
         </div>
 
         <div class="sidebar-content">

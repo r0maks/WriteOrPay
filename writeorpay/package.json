@@ -23,11 +23,13 @@
     "@angular/router": "^5.2.11",
     "@ngrx/store": "^6.1.0",
     "core-js": "^2.5.7",
+    "guid-typescript": "^1.0.7",
     "moment": "^2.22.2",
     "node-sass": "^4.9.3",
     "randomcolor": "^0.5.3",
     "rxjs": "^6.3.3",
     "rxjs-compat": "^6.3.3",
+    "uuid": "^3.3.2",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {

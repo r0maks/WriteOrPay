@@ -1,0 +1,13 @@
+.note-list {
+
+    display: flex;
+    flex-direction: column;
+
+    .new-note-header {
+        cursor: pointer;
+        color: #27ae60;
+        .button-text {
+            font-size: 22px;
+        }
+    }
+}
