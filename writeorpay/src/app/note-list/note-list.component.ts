@@ -13,7 +13,6 @@ import Note from '../models/note';
 export class NoteListComponent implements OnInit {
 
   private notes$: Observable<Note[]>;
-
   constructor(private _store: Store<AppState>) { }
 
   ngOnInit() {
