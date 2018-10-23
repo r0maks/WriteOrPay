@@ -1,15 +1,23 @@
+@import "../palette.scss";
+
 .count-tile {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     .count-tile-count {
         font-size: 15px;
         font-weight: 300;
+        margin-bottom: 5px;
     }
 
     .count-tile-value {
         font-size: 25px;
+    }
+
+    .tile-percentage {
+
     }
 }
