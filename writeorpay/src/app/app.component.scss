@@ -1,3 +1,5 @@
+@import "palette.scss";
+
 .app-container {
     display: flex;
     flex-direction: column;
@@ -21,7 +23,7 @@
             margin-left: 25px;
             transition: width 2s;
             padding-left:10px;
-            border-right: 1px solid #AAA;
+            border-right: 1px solid $grey3;
             flex-basis: 75%;
         }
     
