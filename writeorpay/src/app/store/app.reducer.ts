@@ -3,6 +3,7 @@ import * as appActions from './app.actions';
 import { ActionReducer, Action } from '@ngrx/store';
 import * as moment from 'moment';
 import { Moment } from 'moment';
+import { strictEqual } from 'assert';
 
 export interface State {
     notes: Note[],
@@ -24,6 +25,28 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
                 ...state,
                 contentExpanded: !state.contentExpanded
             };
+        case appActions.NOTE_CONTENT_CHANGED:
+            const allNotes = Object.assign([], state.notes);
+            if (state.currentNoteId) {
+                const changingNote = allNotes.find(x => x.id == state.currentNoteId);
+                changingNote.content = action.content;
+                changingNote.lastUpdatedDate = moment();
+            }
+            return {
+                ...state,
+                notes: allNotes,
+            };
+        case appActions.NOTE_TITLE_CHANGED:
+            const allNotes2 = Object.assign([], state.notes);
+            if (state.currentNoteId) {
+                const changingNote = allNotes2.find(x => x.id == state.currentNoteId);
+                changingNote.title = action.title;
+                changingNote.lastUpdatedDate = moment();
+            }
+            return {
+                ...state,
+                notes: allNotes2,
+            };
         case appActions.CLOSE_CURRENT_NOTE:
             return {
                 ...state,
@@ -37,7 +60,6 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
         case appActions.NEW_NOTE:
             const note = new Note();
             const notes = state.notes;
-            note.title = 'note title'
             note.createdDate = moment();
             notes.push(note);
             return {

@@ -9,6 +9,8 @@ import { NoteListComponent } from './note-list/note-list.component';
 import { ActionHeaderComponent } from './action-header/action-header.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EditableDivDirective } from './directives/content-editable.directive';
 
 
 @NgModule({
@@ -20,9 +22,11 @@ import { reducers } from './store/reducers';
     CalendarPaneComponent,
     NoteListComponent,
     ActionHeaderComponent,
+    EditableDivDirective,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     StoreModule.forRoot(reducers),
   ],
   providers: [],
