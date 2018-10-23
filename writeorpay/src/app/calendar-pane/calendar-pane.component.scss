@@ -1,3 +1,5 @@
+@import "../palette.scss";
+
 .calendar-pane {
     height: 100%;
     width: 100%;
@@ -26,6 +28,23 @@
             margin-top: 15px;
             width: 14%; // (1/7) for seven days
             text-align: center;
+        }
+
+        .selectable-day {
+            cursor: pointer;
+            transition: 0.3s;
+
+            // TODO: Lucas, we need a better calendar day hover effect
+            &:hover {
+                background: $grey5;
+                color: white;
+            }
+
+            // class that gets applied if today
+            &-today {
+                background: #8e44ad;
+                color: white;
+            }
         }
     }
 }

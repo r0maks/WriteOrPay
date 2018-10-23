@@ -68,7 +68,7 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
             const notes = state.notes;
             note.createdDate = newDate;
             note.lastUpdatedDate = newDate;
-            notes.push(note);
+            notes.unshift(note); // unshift because note should always be the first in the array
             return {
                 ...state,
                 notes: notes,

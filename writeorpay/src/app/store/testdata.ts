@@ -33,7 +33,7 @@ export function getTestData(): Note[] {
     'Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.'
     ));
 
-    notes.push(new Note('This is a test of a long title. How does it look when it is super long like this? Mote text can go here and it should not wrap',
+    notes.push(new Note('This is a test of a long title. How does it look when it is super long like this? Note text can go here and it could start to wrap',
     'Lorem ipsum dolor amet mustache knausgaard +1, blue bottle waistcoat tbh semiotics artisan synth stumptown gastropub cornhole celiac swag. Brunch raclette vexillologist post-ironic glossier ennui XOXO mlkshk godard pour-over blog tumblr humblebrag. Blue bottle put a bird on it twee prism biodiesel brooklyn. Blue bottle ennui tbh succulents.'
     ));
 
