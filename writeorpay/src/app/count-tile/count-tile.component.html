@@ -2,7 +2,10 @@
   <div class="count-tile-count">
     <span>{{metricName}}</span>
   </div>
-  <div class="count-tile-value">
+  <div *ngIf="!percentageMode" class="count-tile-value">
     <span>{{metricValue}}</span>
   </div>
+  <div *ngIf="percentageMode" class="tile-percentage">
+      <canvas id="myChart" width="35" height="35"></canvas>
+    </div>
 </div> 
