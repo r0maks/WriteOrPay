@@ -2,6 +2,7 @@ import Note from '../models/note';
 import * as appActions from './app.actions';
 import { ActionReducer, Action } from '@ngrx/store';
 import * as moment from 'moment';
+import { getTestData } from './testdata'
 
 export interface State {
     notes: Note[],
@@ -10,7 +11,7 @@ export interface State {
 };
 
 export const initialState: State = {
-    notes: [],
+    notes: getTestData(),
     contentExpanded: false,
     currentNoteId: null,
 };
@@ -63,8 +64,10 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
             };
         case appActions.NEW_NOTE:
             const note = new Note();
+            const newDate = moment();
             const notes = state.notes;
-            note.createdDate = moment();
+            note.createdDate = newDate;
+            note.lastUpdatedDate = newDate;
             notes.push(note);
             return {
                 ...state,

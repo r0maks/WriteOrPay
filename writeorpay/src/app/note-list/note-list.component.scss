@@ -21,10 +21,12 @@
         margin-left: 18px;
 
         .note-preview {
+            padding: 10px;
             display: flex;
             flex-direction: column;
             margin-bottom: 20px;
             cursor: pointer;
+            border-radius: 2px;
 
             .note-title {
                 margin-bottom: 5px;
@@ -37,6 +39,13 @@
             .note-date {
                 font-size: 18px;
                 color: $grey4;
+            }
+
+            // note-preview hover
+            // TODO Lucas: need a better hover class here
+            &:hover {
+                background: $grey3;
+                cursor: pointer;
             }
         }
     }

@@ -11,8 +11,10 @@ export default class Note {
     public title: string;
     public content: string;
 
-    constructor(content?: string, title?: string) {
+    constructor(title?: string, content?: string) {
         this.init();
+        this.title = title;
+        this.content = content;
     }
 
     public init() {

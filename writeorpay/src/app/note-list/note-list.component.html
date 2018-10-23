@@ -8,6 +8,7 @@
     <div *ngFor='let note of notes$ | async' class="note-preview" (click)="selectNote(note.id)">
       <div class="note-title">
         {{note.title}}
+        <i *ngIf="!note.title">Untitled</i>
       </div>
       <div class="note-date">
         {{note.getFormattedUpdatedDate()}}
