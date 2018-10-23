@@ -11,19 +11,23 @@ export default class Note {
     public title: string;
     public content: string;
 
-    constructor() {
+    constructor(content?: string, title?: string) {
+        this.init();
+    }
+
+    public init() {
         this.id = Guid.create().toString();
         this.createdDate = moment();
     }
 
-    public createdDateFormat(): string {
+    public getFormattedCreatedDate(): string {
         if (this.createdDate) {
             return this.createdDate.format(NOTE_DATE_FORMAT);
         }
         return '';
     }
 
-    public updatedDateFormat(): string {
+    public getFormattedUpdatedDate(): string {
         if (this.lastUpdatedDate) {
             return this.lastUpdatedDate.format(NOTE_DATE_FORMAT);
         }

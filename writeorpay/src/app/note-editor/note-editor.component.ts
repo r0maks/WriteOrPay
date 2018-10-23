@@ -29,7 +29,7 @@ export class NoteEditorComponent implements OnInit {
 
         const notes$ = this._store.pipe(select(a => a.appState.notes)).subscribe(notes => {
           const note = notes.filter(a => a.id === currentNoteId)[0];
-          this.formattedDate = note.updatedDateFormat() || this.today.format('dddd, MMMM DD, YYYY');
+          this.formattedDate = note.getFormattedUpdatedDate() || this.today.format('dddd, MMMM DD, YYYY');
           this.contentForm.patchValue(note.content, {emitEvent: false});
           this.titleForm.patchValue(note.title, {emitEvent: false});
         });
