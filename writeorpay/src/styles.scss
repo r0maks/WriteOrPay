@@ -40,6 +40,11 @@ button:hover {
 .fas {
     color: $grey4;
     cursor: pointer;
+
+    &:hover {
+        color: $primary-color;
+        transition: ease .3s;
+    }
 }
 
 

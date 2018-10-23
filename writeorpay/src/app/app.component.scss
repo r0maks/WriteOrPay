@@ -24,11 +24,11 @@
             transition: width 2s;
             padding-left:10px;
             border-right: 1px solid $grey3;
-            flex-basis: 75%;
+            flex-basis: calc(100% - 350px);
         }
     
         .sidebar-content {
-            flex-basis: 25%;
+            width: 350px;
             transition: ease-out 5s;
         }
     }
@@ -36,11 +36,11 @@
     .app-content-container-expanded {
     
         .app-content {
-            flex-basis: 97%;
+            flex-basis: calc(100% - 15px);
         }
     
         .sidebar-content {
-            flex-basis: 3%;
+            width: 15px;
             display: none;
         }
     }
