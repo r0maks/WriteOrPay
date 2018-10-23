@@ -30,7 +30,7 @@
             margin: 4px;
             text-align: center;
             vertical-align: middle;
-            line-height: 1.9;
+            line-height: 1.8;
         }
 
         .selectable-day {
@@ -52,6 +52,16 @@
             &-today {
                 background: #8e44ad;
                 color: $grey1;
+            }
+
+            &-future {
+                border: 1px solid $grey3;
+
+            }
+
+            &-past {
+                border: 1px solid $primary-color;
+
             }
         }
     }

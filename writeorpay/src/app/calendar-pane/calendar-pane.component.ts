@@ -59,6 +59,10 @@ export class CalendarPaneComponent implements OnInit {
     return this.today.date() < date; 
   }
 
+  private isBeforeToday(date: number){
+    return this.today.date() > date; 
+  }
+
   public monthUp() {
     this.selectedMonth = this.selectedMonth.add(1, 'months');
     this.initCalendar();

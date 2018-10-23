@@ -27,12 +27,16 @@
             margin-bottom: 20px;
             cursor: pointer;
             border: 0px solid $primary-color;
+            padding-right: 15px;
 
             .note-title {
-                margin-bottom: 5px;
+                margin-bottom: 0px;
                 font-size: 26px;
                 color: $grey5;
-                font-family: $text-type;
+                font-family: $title-type;
+                font-weight: 400;
+
+                
                 
             }
 
@@ -46,12 +50,13 @@
             &:hover {
                 cursor: pointer;
                 border-left: 3px solid $primary-color;
-                transition: ease .3s;
+                transition: .3s;
                 padding-left: 15px;
+                padding-right: 0px;
 
                 .note-title {
                     color: $primary-color;
-                    transition: ease .3s;
+                    transition: .3s;
                 }
             }
         }
