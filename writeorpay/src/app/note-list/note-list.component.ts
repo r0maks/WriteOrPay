@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from '../store/reducers';
+import * as AppActions from "../store/app.actions";
 
 @Component({
   selector: 'app-note-list',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NoteListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _store: Store<AppState>) { }
 
   ngOnInit() {
+  }
+
+  newNote(){
+    this._store.dispatch(new AppActions.NewNote());
   }
 
 }
