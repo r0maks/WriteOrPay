@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { ApiService } from './services/api.service';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 
 export const AppRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -34,6 +36,7 @@ export const AppRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       AppRoutes,
@@ -41,7 +44,9 @@ export const AppRoutes: Routes = [
     ),
     StoreModule.forRoot(reducers),
   ],
-  providers: [],
+  providers: [
+    ApiService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../store/reducers';
+import { ApiService } from '../services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,10 @@ export class HomeComponent implements OnInit {
   private currentNoteId$: Observable<string>;
   public edittingNote: boolean;
 
-  constructor(private _store: Store<AppState>) { }
+  constructor(
+    private _store: Store<AppState>,
+    private apiService: ApiService,
+    ) { }
 
   ngOnInit() {
     this.isExpanded$ = this._store.pipe(select(store => store.appState.contentExpanded));
@@ -26,6 +30,8 @@ export class HomeComponent implements OnInit {
         this.edittingNote = false;
       }
     });
+
+    this.apiService.validateLogin('roy', '123');
   }
 
 }
