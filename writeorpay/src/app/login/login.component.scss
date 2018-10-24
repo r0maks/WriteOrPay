@@ -1,0 +1,10 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+
+    .login-controls-pane {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
