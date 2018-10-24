@@ -6,6 +6,7 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from '../store/reducers';
 import { FormControl } from '@angular/forms';
 import { debounceTime, map } from 'rxjs/operators';
+import { TextProcessorService } from '../text-logic/text-processor.service';
 
 @Component({
   selector: 'app-note-editor',
@@ -18,9 +19,11 @@ export class NoteEditorComponent implements OnInit {
   public formattedDate: string;
   public contentForm: FormControl;
   public titleForm: FormControl;
-  public content: string;
 
-  constructor(private _store: Store<AppState>) { }
+  constructor(
+    private _store: Store<AppState>,
+    private _textProcessor: TextProcessorService,
+  ) { }
 
   ngOnInit() {
     this.today = moment();
@@ -47,10 +50,8 @@ export class NoteEditorComponent implements OnInit {
     });
 
     this.contentForm.valueChanges
-      .pipe(debounceTime(500)) // using debounce (ms) to buffer how often changes log
       .subscribe(val => {
-      this.content = val;
-      this.contentChanged(val);
+      this.contentChanged(this._textProcessor.processUserInput(val));
     });
 
     this.titleForm.valueChanges

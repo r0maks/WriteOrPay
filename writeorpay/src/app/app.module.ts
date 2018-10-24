@@ -15,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ApiService } from './services/api.service';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { TextProcessorService } from './text-logic/text-processor.service';
 
 export const AppRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -46,6 +47,7 @@ export const AppRoutes: Routes = [
   ],
   providers: [
     ApiService,
+    TextProcessorService
   ],
   bootstrap: [AppComponent]
 })
