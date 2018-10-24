@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const url = 'mongodb://localhost:27017/notesDb'
 const user = require('./model/user');
+const note = require('./model/note');
 const cors = require('cors');
 
 app.use(bodyParser.json())
@@ -28,7 +29,6 @@ app.post('/api/user/login', (req, res) => {
                     message: 'Login Failed'
                 })
             }
-
         })
     });
 })
