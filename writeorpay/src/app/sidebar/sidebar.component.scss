@@ -1,3 +1,5 @@
+@import '../palette.scss';
+
 .sidebar {
     display: flex;
     justify-content: start;
@@ -43,7 +45,7 @@
 
             .fa-search {
                 position: relative;
-                left: 265px;
+                left: 260px;
                 top: -26px;
             }
 
@@ -51,8 +53,9 @@
                 width: 100%;
                 font-size: 16px;
                 display: flex;
-                border-radius: 10px;
-                border: none;
+                border-radius: 16px;
+                border: 2px solid;
+                border-color: $grey4;
                 height: 30px;
                 padding-left: 10px;
                 box-sizing: border-box;

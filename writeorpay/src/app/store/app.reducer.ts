@@ -3,7 +3,6 @@ import * as appActions from './app.actions';
 import { ActionReducer, Action } from '@ngrx/store';
 import * as moment from 'moment';
 import { getTestData } from './testdata'
-import { BoundTextAst } from '@angular/compiler';
 
 export interface State {
     notes: Note[],
@@ -115,8 +114,16 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
 
 function noteContains(note: Note, searchTerms: string): boolean {
     const lowerSearchTerms = searchTerms.toLowerCase();
-    return note.content.toLowerCase().indexOf(lowerSearchTerms) >= 0 ||
-        note.title.toLowerCase().indexOf(lowerSearchTerms) >= 0
+    
+    if (note.content && note.content.toLowerCase().indexOf(lowerSearchTerms) >= 0) {
+        return true;
+    }
+
+    if (note.title && note.title.toLowerCase().indexOf(lowerSearchTerms) >= 0) {
+        return true;
+    }
+
+    return false;
 }
 
 

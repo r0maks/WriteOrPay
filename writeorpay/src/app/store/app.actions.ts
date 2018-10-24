@@ -8,6 +8,7 @@ export const NOTE_CONTENT_CHANGED = 'NOTE_CONTENT_CHANGED';
 export const NOTE_TITLE_CHANGED = 'NOTE_TITLE_CHANGED';
 export const SEARCH_TOGGLED = 'SEARCH_TOGGLED';
 export const SEARCH_CHANGED = 'SEARCH_CHANGED';
+export const SEARCH_CLEARED = 'SEARCH_CLEARED';
 
 export class ToggleExpander implements Action {
   readonly type = TOGGLE_EXPANDER;
@@ -41,6 +42,10 @@ export class SearchChanged implements Action {
   readonly type = SEARCH_CHANGED;
   constructor(public searchTerms: string) { }
 }
+export class SearchCleared implements Action {
+  readonly type = SEARCH_CLEARED;
+  constructor() { }
+}
 
 export type AppActions
   = 
@@ -51,4 +56,5 @@ export type AppActions
   NoteContentChanged |
   NoteTitleChanged | 
   SearchToggled | 
-  SearchChanged
+  SearchChanged |
+  SearchCleared
