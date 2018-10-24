@@ -48,6 +48,10 @@ export class SidebarComponent implements OnInit {
     this._store.dispatch(new AppActions.SearchToggled());
   }
 
+  searchCleared() {
+    this._store.dispatch(new AppActions.SearchCleared());
+  }
+
   onSearchBlur(){
     if (!this.searchForm.value) {
       this.searchToggled();

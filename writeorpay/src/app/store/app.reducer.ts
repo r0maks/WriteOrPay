@@ -68,6 +68,11 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
                 ...state,
                 currentNoteId: action.noteId,
             };
+        case appActions.SEARCH_CLEARED:
+            return {
+                ... state,
+                searchTerms: null,
+            };
         case appActions.SEARCH_TOGGLED:
 
             // if search is toggled off, clear the search terms

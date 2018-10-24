@@ -24,6 +24,7 @@
         <div *ngIf="searchBarVisible === true" class="search-bar-container">
             <input [formControl]="searchForm" (blur)="onSearchBlur()" type="text">
             <i (click)="searchClicked()" class="fas fa-search"></i>
+            <i *ngIf="searchForm.value" (click)="searchCleared()" class="fas fa-times"></i>
         </div>
     </div>
 </div>
