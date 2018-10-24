@@ -22,15 +22,13 @@
         .app-content {
             margin-left: 25px;
             transition: width 2s;
-            padding-left:10px;
             flex-basis: calc(100% - 300px);
             
         }
     
         .sidebar-content {
             width: 300px;
-            transition: ease-out 5s;
-            border-left: 1px solid $grey2;
+            transition: ease .3s;
             position: fixed;
             right: 0px;
                     }
@@ -43,8 +41,7 @@
         }
     
         .sidebar-content {
-            width: 15px;
-            display: none;
+            right:-295px;
         }
     }
 

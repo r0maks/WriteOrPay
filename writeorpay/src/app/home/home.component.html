@@ -1,7 +1,7 @@
 <div class="app-container">
-    <div class="actions-header-container">
+    <!-- <div class="actions-header-container">
         <app-action-header></app-action-header>
-    </div>
+    </div> -->
     <div class="app-content-container" [ngClass]="{'app-content-container-expanded' : isExpanded$ | async }">
         <div class="app-content">
             <app-note-editor *ngIf="edittingNote === true"></app-note-editor>

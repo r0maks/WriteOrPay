@@ -3,33 +3,26 @@
     padding-bottom: 20px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding: 10px 20px 10px 0px;
+    margin-left: -4px;
 
-    .action-placeholder {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-basis: calc(100% - 295px);
-    }
-
+   
     .actions {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        flex-basis: 295px;
+        flex-basis: 300px;
 
         .actions-minimized {
-            flex-basis: 10px;
+            flex-basis: 15px;
         }
     }
 }
 
 .action-header-expanded {
-    .action-placeholder {
-        flex-basis: calc(100% - 10px);
-    }
     .actions {
-        flex-basis: 10px;
+        flex-basis: 15px;
     }
 
     .close-button {

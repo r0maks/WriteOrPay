@@ -1,11 +1,14 @@
 @import '../palette.scss';
 
+
 .sidebar {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     padding: 20px;
     height: calc(97vh - 45px);
+    border-left: 1px solid $grey3;   
+    
 
     .counts-panel {
         display: flex;

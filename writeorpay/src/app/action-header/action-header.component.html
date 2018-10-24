@@ -1,8 +1,5 @@
 <div class="action-header" [ngClass]="{'action-header-expanded' : isExpanded$ | async}">
-  <div class="action-placeholder">
-
-  </div>
-  <div class="actions">
+    <div class="actions">
     <i (click)="collapsePanel()" class="fas" [ngClass]="{'fa-angle-left' : isExpanded$ | async, 'fa-angle-right' : (isExpanded$ | async) == false }"></i>
     <i *ngIf="noteSelected === true" (click)="closeCurrentNote()" class="fas fa-times close-button"></i>
   </div>

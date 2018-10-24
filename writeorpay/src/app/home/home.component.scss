@@ -22,26 +22,27 @@
         .app-content {
             margin-left: 25px;
             transition: width 2s;
-            padding-left:10px;
-            border-right: 1px solid $grey3;
-            flex-basis: calc(100% - 350px);
+            flex-basis: calc(100% - 300px);
+            padding-top:45px;
         }
     
         .sidebar-content {
-            width: 350px;
-            transition: ease-out 5s;
+            width: 300px;
+            transition: ease .3s;
+            position: fixed;
+            right: 0px;
+            background-color: $grey1;
         }
     }
 
     .app-content-container-expanded {
     
         .app-content {
-            flex-basis: calc(100% - 15px);
+            flex-basis: calc(100% - 20px);
         }
     
         .sidebar-content {
-            width: 15px;
-            display: none;
+            right: -280px;
         }
     }
 

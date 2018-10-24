@@ -2,7 +2,7 @@
 
   <div *ngIf="!(isSearching$ | async) || !(searchTerm$ | async)" class="new-note-header" (click)="newNote()">
     <i class="fas fa-plus"></i>
-    <span class="button-text">New</span>
+    <span class="button-text">New Entry</span>
   </div>
   <div *ngIf="(isSearching$ | async) && (searchTerm$ | async)" class="new-note-header">
     <i class="fas fa-time"></i>
