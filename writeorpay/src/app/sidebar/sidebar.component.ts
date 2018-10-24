@@ -4,6 +4,7 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from '../store/reducers';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -15,7 +16,7 @@ export class SidebarComponent implements OnInit {
   private searchBarVisible: boolean;
   private searchForm: FormControl;
 
-  constructor(private _store: Store<AppState>) { }
+  constructor(private _store: Store<AppState>, private router: Router) { }
 
   ngOnInit() {
     this.searchForm = new FormControl('');
@@ -38,6 +39,10 @@ export class SidebarComponent implements OnInit {
 
   newNote() {
     this._store.dispatch(new AppActions.NewNote());
+  }
+
+  loginPage() {
+    this.router.navigate(['/login']);
   }
 
   searchClicked() {

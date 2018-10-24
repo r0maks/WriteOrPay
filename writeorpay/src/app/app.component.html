@@ -1,15 +1,1 @@
-<div class="app-container">
-    <div class="actions-header-container">
-        <app-action-header></app-action-header>
-    </div>
-    <div class="app-content-container" [ngClass]="{'app-content-container-expanded' : isExpanded$ | async }">
-        <div class="app-content">
-            <app-note-editor *ngIf="edittingNote === true"></app-note-editor>
-            <app-note-list *ngIf="edittingNote === false"></app-note-list>
-        </div>
-
-        <div class="sidebar-content">
-            <app-sidebar></app-sidebar>
-        </div>
-    </div>
-</div>
+<router-outlet></router-outlet>

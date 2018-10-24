@@ -10,6 +10,15 @@ import { ActionHeaderComponent } from './action-header/action-header.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './store/reducers';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
+import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
+export const AppRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+
+];
 
 @NgModule({
   declarations: [
@@ -20,10 +29,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     CalendarPaneComponent,
     NoteListComponent,
     ActionHeaderComponent,
+    LoginComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    RouterModule.forRoot(
+      AppRoutes,
+      { enableTracing: true }
+    ),
     StoreModule.forRoot(reducers),
   ],
   providers: [],

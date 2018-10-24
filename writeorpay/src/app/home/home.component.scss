@@ -1,0 +1,49 @@
+@import "../palette.scss";
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+
+    .actions-header-container {
+        display: flex;
+        flex-direction: row;
+        flex-basis: 100%;
+
+        app-action-header {
+            width: 100%;
+        }
+    }
+
+    .app-content-container {
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+    
+        .app-content {
+            margin-left: 25px;
+            transition: width 2s;
+            padding-left:10px;
+            border-right: 1px solid $grey3;
+            flex-basis: calc(100% - 350px);
+        }
+    
+        .sidebar-content {
+            width: 350px;
+            transition: ease-out 5s;
+        }
+    }
+
+    .app-content-container-expanded {
+    
+        .app-content {
+            flex-basis: calc(100% - 15px);
+        }
+    
+        .sidebar-content {
+            width: 15px;
+            display: none;
+        }
+    }
+
+    
+}
