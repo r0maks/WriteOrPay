@@ -30,18 +30,28 @@ export class SidebarComponent implements OnInit {
       .subscribe(val => {
         this.searchBarVisible = val;
       });
+    const searchTermSub = this._store.pipe(select(a => a.appState.searchTerms))
+      .subscribe(val => {
+        this.searchForm.patchValue(val, { emitEvent: false });
+      });
   }
 
-  newNote(){
+  newNote() {
     this._store.dispatch(new AppActions.NewNote());
   }
 
-  searchClicked(){
+  searchClicked() {
+    this.searchToggled();
+  }
+
+  searchToggled() {
     this._store.dispatch(new AppActions.SearchToggled());
   }
 
-  searchToggledOff(){
-    this._store.dispatch(new AppActions.SearchToggled());
+  onSearchBlur(){
+    if (!this.searchForm.value) {
+      this.searchToggled();
+    }
   }
 
 }

@@ -13,6 +13,7 @@ import Note from '../models/note';
 export class NoteListComponent implements OnInit {
 
   private notes$: Observable<Note[]>;
+  private filteredNotes$: Observable<Note[]>;
   private isSearching$: Observable<boolean>;
   private searchTerm$: Observable<string>;
 
@@ -22,6 +23,7 @@ export class NoteListComponent implements OnInit {
     this.isSearching$ = this._store.pipe(select(store => store.appState.searchActive));
     this.searchTerm$ = this._store.pipe(select(store => store.appState.searchTerms));
     this.notes$ = this._store.pipe(select(store => store.appState.notes));
+    this.filteredNotes$ = this._store.pipe(select(store => store.appState.filteredNotes));
   }
 
   newNote(){

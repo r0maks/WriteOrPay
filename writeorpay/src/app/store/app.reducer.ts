@@ -3,9 +3,11 @@ import * as appActions from './app.actions';
 import { ActionReducer, Action } from '@ngrx/store';
 import * as moment from 'moment';
 import { getTestData } from './testdata'
+import { BoundTextAst } from '@angular/compiler';
 
 export interface State {
     notes: Note[],
+    filteredNotes: Note[],
     contentExpanded: boolean;
     currentNoteId: string;
     searchActive: boolean;
@@ -14,6 +16,7 @@ export interface State {
 
 export const initialState: State = {
     notes: getTestData(),
+    filteredNotes: null,
     contentExpanded: false,
     currentNoteId: null,
     searchActive: false,
@@ -67,17 +70,34 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
                 currentNoteId: action.noteId,
             };
         case appActions.SEARCH_TOGGLED:
-            return {
-                ...state,
-                searchActive: !state.searchActive
-            };
+
+            // if search is toggled off, clear the search terms
+            if (state.searchActive) {
+                return {
+                    ...state,
+                    searchActive: !state.searchActive,
+                    searchTerms: null,
+                };
+            } else {
+                return {
+                    ...state,
+                    searchActive: !state.searchActive
+                };
+            }
+
         case appActions.SEARCH_CHANGED:
+
+            const filteredNotes = Object.assign([], state.notes).filter(note => {
+                return noteContains(note, action.searchTerms);
+            });
+
             return {
                 ...state,
-                searchTerms: action.searchTerms
+                searchTerms: action.searchTerms,
+                filteredNotes: filteredNotes
             };
         case appActions.NEW_NOTE:
-        const newDate = moment();
+            const newDate = moment();
             const note = new Note();
             note.createdDate = newDate;
             note.lastUpdatedDate = newDate;
@@ -92,4 +112,12 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
             return state;
     }
 };
+
+function noteContains(note: Note, searchTerms: string): boolean {
+    const lowerSearchTerms = searchTerms.toLowerCase();
+    return note.content.toLowerCase().indexOf(lowerSearchTerms) >= 0 ||
+        note.title.toLowerCase().indexOf(lowerSearchTerms) >= 0
+}
+
+
 

@@ -8,7 +8,9 @@
     <i class="fas fa-time"></i>
     <span>Entries with "{{searchTerm$ | async}}"</span>
   </div>
-  <div class="note-list-panel">
+  
+  <!-- actual note list -->
+  <div *ngIf="!(isSearching$ | async) || !(searchTerm$ | async)" class="note-list-panel">
     <div *ngFor='let note of notes$ | async' class="note-preview" (click)="selectNote(note.id)">
       <div class="note-title">
         {{note.title}}
@@ -19,4 +21,21 @@
         </div>
     </div>
   </div>
+
+  <!-- filtered list of notes. Might need to split the styles out if they change for the searching -->
+  <div *ngIf="(isSearching$ | async) && (searchTerm$ | async)" class="note-list-panel">
+    <div *ngFor='let note of filteredNotes$ | async' class="note-preview" (click)="selectNote(note.id)">
+      <div class="note-title">
+        {{note.title}}
+        <i *ngIf="!note.title">Untitled</i>
+      </div>
+      <div class="note-date">
+        {{note?.getFormattedUpdatedDate()}}
+        </div>
+    </div>
+  </div>
+
+  <!-- Need a "No Records Found" message if there are not filterednotes -->
+
+
 </div>
