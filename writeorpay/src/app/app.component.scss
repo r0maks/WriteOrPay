@@ -23,14 +23,17 @@
             margin-left: 25px;
             transition: width 2s;
             padding-left:10px;
-            border-right: 1px solid $grey3;
-            flex-basis: calc(100% - 350px);
+            flex-basis: calc(100% - 300px);
+            
         }
     
         .sidebar-content {
-            width: 350px;
+            width: 300px;
             transition: ease-out 5s;
-        }
+            border-left: 1px solid $grey2;
+            position: fixed;
+            right: 0px;
+                    }
     }
 
     .app-content-container-expanded {

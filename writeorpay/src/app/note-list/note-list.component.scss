@@ -28,15 +28,14 @@
             cursor: pointer;
             border: 0px solid $primary-color;
             padding-right: 15px;
+            transition: .3s;
 
             .note-title {
                 margin-bottom: 0px;
                 font-size: 26px;
                 color: $grey5;
                 font-family: $title-type;
-                font-weight: 400;
-
-                
+                font-weight: 400;          
                 
             }
 
@@ -46,7 +45,6 @@
             }
 
             // note-preview hover
-            // TODO Lucas: need a better hover class here
             &:hover {
                 cursor: pointer;
                 border-left: 3px solid $primary-color;

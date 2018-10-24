@@ -2,15 +2,16 @@
 
 .sidebar {
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     flex-direction: column;
-    padding: 25px;
+    padding: 20px;
+    height: calc(97vh - 45px);
 
     .counts-panel {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         
         .counts-panel-column {
             display: flex;
@@ -24,24 +25,26 @@
     }
 
     .calendar-panel {
-        margin-bottom: 30px;
-        height: 265px; // handling for longest possible month
+        margin-bottom: 20px;
+        height: 265px;
+        flex-grow: 2; // handling for longest possible month
     }
 
     .sidebar-controls-panel {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        margin-bottom:20px;
 
         .actions-pane {
-            margin-top: 30px;
+            margin-top: 20px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
         }
 
         .search-bar-container {
-            margin-top: 30px;
+            margin-top: 20px;
 
             .fa-search {
                 position: relative;
