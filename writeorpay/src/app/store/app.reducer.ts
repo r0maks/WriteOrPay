@@ -62,6 +62,7 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
             return {
                 ...state,
                 currentNoteId: null,
+                notes: sortNotesByLastUpdate(state.notes),
             };
         case appActions.SELECT_NOTE:
             return {
@@ -129,6 +130,13 @@ function noteContains(note: Note, searchTerms: string): boolean {
     }
 
     return false;
+}
+
+function sortNotesByLastUpdate(notes: Note[]): Note[] {
+    if (notes) {
+        notes = notes.sort((a,b)=> b.lastUpdatedDate.diff(a.lastUpdatedDate))
+    }
+    return notes;
 }
 
 
