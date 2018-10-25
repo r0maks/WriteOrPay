@@ -8,6 +8,7 @@
     </div>
     <!-- <div class="note-editor" [formControl]="contentForm" placeholder="What's on your mind?" contenteditable="true"></div> -->
     <div class="note-editor">
+        <!-- Included some JS in the textarea to have it automatically expand: TODO Roman, is there a better place for this script? -->
         <textarea [formControl]="contentForm" contentEditable=true placeholder="What's today's story?" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
     </div> 
 </div>
