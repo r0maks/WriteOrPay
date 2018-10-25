@@ -26,6 +26,34 @@
             padding-top:45px;
             overflow: auto;
             height: calc(97vh - 45px);
+
+            .fadeout {
+                position: fixed; 
+                bottom: 15px;
+                height: 4em;
+                width: 100%;
+                display: block;
+                background: -webkit-linear-gradient(
+                    rgba(235, 235, 235, 0) 0%,
+                    rgba(235, 235, 235, 1) 100%
+                ); 
+                background-image: -moz-linear-gradient(
+                    rgba(235, 235, 235, 0) 0%,
+                    rgba(235, 235, 235, 1) 100%
+                );
+                background-image: -o-linear-gradient(
+                    rgba(235, 235, 235, 0) 0%,
+                    rgba(235, 235, 235, 1) 100%
+                );
+                background-image: linear-gradient(
+                    rgba(235, 235, 235, 0) 0%,
+                    rgba(235, 235, 235, 1) 100%
+                );
+                background-image: -ms-linear-gradient(
+                    rgba(235, 235, 235, 0) 0%,
+                    rgba(235, 235, 235, 1) 100%
+                );
+            } 
         }
     
         .sidebar-content {

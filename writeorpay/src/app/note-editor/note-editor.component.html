@@ -8,6 +8,6 @@
     </div>
     <!-- <div class="note-editor" [formControl]="contentForm" placeholder="What's on your mind?" contenteditable="true"></div> -->
     <div class="note-editor">
-        <textarea [formControl]="contentForm" contentEditable=true placeholder="What's today's story?"></textarea>
-    </div>    
+        <textarea [formControl]="contentForm" contentEditable=true placeholder="What's today's story?" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+    </div> 
 </div>
