@@ -47,6 +47,17 @@ button:hover {
     }
 }
 
+.pip {
+    width: 6px;
+    height: 6px;
+    position: relative;
+    left: 6px;
+    bottom:2px;
+    display: inline-block;
+    border-radius: 50%;
+    background-color: $primary-color;
+    }
+
 
 /* globally enabling placeholder text on any div */
 

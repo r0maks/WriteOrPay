@@ -1,6 +1,6 @@
 <div class="count-tile">
   <div class="count-tile-count">
-    <span>{{metricName}}</span>
+    <span>{{metricName}}<span *ngIf="pipMode"><span class="pip"></span></span></span>
   </div>
   <div *ngIf="!percentageMode" class="count-tile-value">
     <span>{{metricValue}}</span>
