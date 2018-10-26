@@ -9,20 +9,7 @@
     border-left: 1px solid $grey3;   
     
     .counts-panel {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
         margin-bottom: 20px;
-        
-        .counts-panel-column {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-
-            app-count-tile {
-                margin-bottom: 15px;
-            }
-        }
     }
 
     .calendar-panel {

@@ -1,21 +1,33 @@
 @import "../palette.scss";
 
-.count-tile {
+.counts-panel-row {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-around;
 
-    .count-tile-count {
-        font-size: 14px;
-        font-weight: 300;
-    }
-
-    .count-tile-value {
-        font-size: 25px;
-    }
-
+    .counts-panel-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     
-    // .tile-percentage {   }
+        .count-tile {
+            display: flex;
+            margin-bottom: 15px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        
+            .count-tile-count {
+                font-size: 14px;
+                font-weight: 300;
+            }
+        
+            .count-tile-value {
+                font-size: 25px;
+            }
+        
+        }
+    }
 }
+

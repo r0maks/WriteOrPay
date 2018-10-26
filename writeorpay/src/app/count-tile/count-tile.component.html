@@ -1,11 +1,48 @@
-<div class="count-tile">
-  <div class="count-tile-count">
-    <span>{{metricName}}<span *ngIf="pipMode"><span class="pip"></span></span></span>
-  </div>
-  <div *ngIf="!percentageMode" class="count-tile-value">
-    <span>{{metricValue}}</span>
-  </div>
-  <div *ngIf="percentageMode" class="tile-percentage">
-      <canvas id="myChart" width="35" height="35"></canvas>
+<div class="counts-panel-row">
+
+  <div class="counts-panel-column">
+    <!-- <app-count-tile [metricName]="'Word Count'" [pipMode]="true" [metricValue]="967"></app-count-tile> -->
+    <div class="count-tile">
+      <div class="count-tile-count">
+        <span>Word Count
+          <span class="pip"></span>
+        </span>
+      </div>
+      <div class="count-tile-value">
+        <span>967</span>
+      </div>
     </div>
-</div> 
+
+    <!-- <app-count-tile [percentageMode]="true" [metricName]="'Progress'" [metricValue]="80"></app-count-tile> -->
+    <div class="count-tile">
+      <div class="count-tile-count">
+        <span>Progress</span>
+      </div>
+      <div class="tile-percentage">
+        <canvas id="myChart" width="35" height="35"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="counts-panel-column">
+    <!-- <app-count-tile [metricName]="'Current Streak'" [metricValue]="8"></app-count-tile> -->
+    <div class="count-tile">
+      <div class="count-tile-count">
+        <span>Current Streak</span>
+      </div>
+      <div class="count-tile-value">
+        <span>8</span>
+      </div>
+    </div>
+
+    <!-- <app-count-tile [metricName]="'Skip Days'" [metricValue]="9"></app-count-tile> -->
+    <div class="count-tile">
+      <div class="count-tile-count">
+        <span>Skip Days</span>
+      </div>
+      <div class="count-tile-value">
+        <span>9</span>
+      </div>
+    </div>
+  </div>
+</div>

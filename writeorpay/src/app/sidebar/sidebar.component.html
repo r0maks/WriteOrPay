@@ -3,17 +3,8 @@
 </div>
 
 <div class="sidebar">
-    <div class="counts-panel">
-        <div class="counts-panel-column">
-            <app-count-tile [metricName]="'Word Count'" [pipMode]="true" [metricValue]="967"></app-count-tile>
-            <app-count-tile [percentageMode]="true" [metricName]="'Progress'" [metricValue]="80"></app-count-tile>
-        </div>
-
-        <div class="counts-panel-column">
-            <app-count-tile [metricName]="'Current Streak'" [metricValue]="8"></app-count-tile>
-            <app-count-tile [metricName]="'Skip Days'" [metricValue]="9"></app-count-tile>
-        </div>
-
+    <div class="counts-panel">     
+        <app-count-tile></app-count-tile>
     </div>
     <div class="calendar-panel">
         <app-calendar-pane></app-calendar-pane>
