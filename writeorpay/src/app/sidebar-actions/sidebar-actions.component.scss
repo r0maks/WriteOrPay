@@ -1,32 +1,32 @@
 @import '../palette.scss';
 @import '../tooltip.scss';
 
-    .sidebar-controls-panel {
+    .sidebar-controls {
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        margin-bottom:20px;
+        justify-content: space-between;
+        height:40px;
+        margin-top:20px;
 
         .actions-pane {
-            margin-top: 20px;
             display: flex;
             flex-direction: row;
             justify-content: space-around;
         }
 
         .search-bar-container {
-            margin-top: 20px;
-
+            
             .fa-search {
                 position: relative;
-                left: 260px;
-                top: -26px;
+                left: 10px;
+                top: -25px;
+                color: $grey3;
             }
 
             .fa-times {
                 position: relative;
-                left: 220px;
-                top: -26px;
+                left: 217px;
+                top: -25px;
             }
 
             input {
@@ -35,9 +35,9 @@
                 display: flex;
                 border-radius: 16px;
                 border: 2px solid;
-                border-color: $grey4;
+                border-color: $grey3;
                 height: 30px;
-                padding-left: 10px;
+                padding-left: 30px;
                 box-sizing: border-box;
             }
             input[type=text]:focus {outline:none;}
