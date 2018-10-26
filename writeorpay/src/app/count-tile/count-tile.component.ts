@@ -14,6 +14,9 @@ export class CountTileComponent implements OnInit {
   // assuming you are passing in value less than 100
   @Input() percentageMode: boolean;
 
+  // decides whether to place a pip beside the title
+  @Input() pipMode: boolean;
+
   constructor() { }
 
   ngOnInit() {
