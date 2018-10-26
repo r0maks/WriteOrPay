@@ -39,7 +39,7 @@ export class CalendarPaneComponent implements OnInit {
     this.offsetCalendarDays(offset);
 
     for (let i = 0; i < this.numDaysInMonth; i++) {
-      this.daysInMonth.push({date: i + 1});
+      this.daysInMonth.push({date: i + 1, class: this.getDayClass(i+1)});
     }
   }
 
@@ -49,6 +49,26 @@ export class CalendarPaneComponent implements OnInit {
     }
   }
 
+  private getDayClass(date: number): string {
+    
+    if (date) {
+      // before today case
+      if (this.isAfterToday(date)) {
+
+        return 'selectable-day-future';
+        // future case
+      } else if (this.isToday(date)) {
+        return 'selectable-day-today';
+      // today case
+      } else {
+        return 'selectable-day-past';
+      }
+    }
+
+    return '';
+  }
+
+  // is today if dates match
   private isToday(date: number){
     return this.today.date() === date 
       && this.selectedMonth.month() === this.today.month()
@@ -56,11 +76,13 @@ export class CalendarPaneComponent implements OnInit {
   }
 
   private isAfterToday(date: number){
-    return this.today.date() < date; 
+    return (this.today.date() < date && this.isSameMonth(this.selectedMonth, this.today)) 
+    || this.selectedMonth.isAfter(this.today);
   }
 
-  private isBeforeToday(date: number){
-    return this.today.date() > date; 
+  // month is same if month and year match on the dates
+  private isSameMonth(date1: Moment, date2: Moment) {
+    return date1.month() === date2.month() && date1.year() == date2.year();
   }
 
   public monthUp() {

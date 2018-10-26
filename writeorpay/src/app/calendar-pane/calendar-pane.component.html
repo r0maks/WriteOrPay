@@ -30,9 +30,10 @@
     <div class="calendar-day">
       Su
     </div>
-    <div class="calendar-day selectable-day" [ngClass]="{'selectable-day-today' : isToday(day?.date), 'selectable-day-future' : isAfterToday(day?.date), 'selectable-day-past' : isBeforeToday(day?.date) }" *ngFor="let day of daysInMonth">
+    <div class="calendar-day selectable-day {{day?.class}}"
+      *ngFor="let day of daysInMonth">
       {{day?.date}}
-      <div class="day-circle">
+      <div *ngIf="day?.date" class="day-circle">
 
       </div>
     </div>
