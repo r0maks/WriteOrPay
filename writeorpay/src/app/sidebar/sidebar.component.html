@@ -1,7 +1,6 @@
 <div class="action-header" >
-        <app-action-header></app-action-header>
-    
-  </div>
+    <app-action-header></app-action-header>
+</div>
 
 <div class="sidebar">
     <div class="counts-panel">
@@ -21,15 +20,6 @@
     </div>
     <div class="sidebar-controls-panel">
         <button (click)="newNote()" class="">New Entry</button>
-        <div *ngIf="searchBarVisible === false" class="actions-pane">
-            <i (click)="searchClicked()" class="fas fa-search"></i>
-            <i class="fas fa-cogs"></i>
-            <i (click)="loginPage()" class="fas fa-user"></i>
-        </div>
-        <div *ngIf="searchBarVisible === true" class="search-bar-container">
-            <input [formControl]="searchForm" (blur)="onSearchBlur()" type="text">
-            <i (click)="searchClicked()" class="fas fa-search"></i>
-            <i *ngIf="searchForm.value" (click)="searchCleared()" class="fas fa-times"></i>
-        </div>
+        <app-sidebar-actions></app-sidebar-actions>
     </div>
 </div>

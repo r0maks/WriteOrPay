@@ -1,0 +1,12 @@
+<div class="sidebar-controls-panel">
+    <div *ngIf="searchBarVisible === false" class="actions-pane">
+        <i (click)="searchClicked()" class="fas fa-search"></i>
+        <i class="fas fa-cogs"></i>
+        <i (click)="loginPage()" class="fas fa-user"></i>
+    </div>
+    <div *ngIf="searchBarVisible === true" class="search-bar-container">
+        <input [formControl]="searchForm" (blur)="onSearchBlur()" type="text">
+        <i (click)="searchClicked()" class="fas fa-search"></i>
+        <i *ngIf="searchForm.value" (click)="searchCleared()" class="fas fa-times"></i>
+    </div>
+</div>

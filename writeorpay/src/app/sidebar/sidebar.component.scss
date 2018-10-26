@@ -38,41 +38,5 @@
         flex-direction: column;
         justify-content: space-around;
         margin-bottom:20px;
-
-        .actions-pane {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
-
-        .search-bar-container {
-            margin-top: 20px;
-
-            .fa-search {
-                position: relative;
-                left: 260px;
-                top: -26px;
-            }
-
-            .fa-times {
-                position: relative;
-                left: 220px;
-                top: -26px;
-            }
-
-            input {
-                width: 100%;
-                font-size: 16px;
-                display: flex;
-                border-radius: 16px;
-                border: 2px solid;
-                border-color: $grey4;
-                height: 30px;
-                padding-left: 10px;
-                box-sizing: border-box;
-            }
-            input[type=text]:focus {outline:none;}
-        }
     }
 }

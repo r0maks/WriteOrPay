@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { ApiService } from './services/api.service';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { TextProcessorService } from './text-logic/text-processor.service';
+import { SidebarActionsComponent } from './sidebar-actions/sidebar-actions.component';
 
 export const AppRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -28,6 +29,7 @@ export const AppRoutes: Routes = [
     AppComponent,
     NoteEditorComponent,
     SidebarComponent,
+    SidebarActionsComponent,
     CountTileComponent,
     CalendarPaneComponent,
     NoteListComponent,
