@@ -20,8 +20,8 @@
         flex-direction: row;
     
         .app-content {
-            margin-left: 25px;
-            transition: width 2s;
+            margin-left: 20px;
+            transition: ease .3s;
             flex-basis: calc(100% - 300px);
             padding-top:45px;
             overflow: auto;
@@ -54,6 +54,16 @@
                     rgba(235, 235, 235, 1) 100%
                 );
             } 
+
+            @media only screen and (max-width: 650px){
+                margin-left: 0px;
+                flex-basis: calc(100%);
+                -webkit-filter: blur(5px);
+                -moz-filter: blur(5px);
+                -o-filter: blur(5px);
+                -ms-filter: blur(5px);
+                filter: blur(5px);
+            }
         }
     
         .sidebar-content {
@@ -68,7 +78,18 @@
     .app-content-container-expanded {
     
         .app-content {
-            flex-basis: calc(100% - 15px);
+            margin-left: 20px;
+            flex-basis: calc(100% - 10px);
+
+            @media only screen and (max-width: 650px){
+                margin-left: 0px;
+                flex-basis: calc(100%);
+                -webkit-filter: none;
+                -moz-filter: none;
+                -o-filter: none;
+                -ms-filter: none;
+                filter: none;
+            }
         }
     
         .sidebar-content {

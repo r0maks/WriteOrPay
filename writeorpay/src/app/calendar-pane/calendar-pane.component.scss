@@ -46,15 +46,22 @@
             border: 1px solid $grey1;
             font-size: 14px;
 
-            // TODO: Lucas, we need a better calendar day hover effect
             &:hover {
+                border: 1px solid $grey5;
+                background: $grey5;
+                color: $grey1;
+            }
+
+            &:active {
                 border: 1px solid $grey4;
-                
+                background: $grey4;
+                color: $grey1;
+
             }
 
             // class that gets applied if today
             &-today {
-                background: #8e44ad;
+                background:$primary-color;
                 color: $grey1;
             }
 
