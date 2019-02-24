@@ -1,14 +1,12 @@
 <div class="note-editor-container">
     <div class="note-title">
         <textarea [formControl]="titleForm" contentEditable=true maxlength="25" placeholder="Enter your title"></textarea>
-        <!-- <div placeholder="Title" [formControl]="titleForm" contenteditable="true"></div> -->
     </div>
     <div class="note-date">
         {{formattedDate}}
     </div>
-    <!-- <div class="note-editor" [formControl]="contentForm" placeholder="What's on your mind?" contenteditable="true"></div> -->
     <div class="note-editor">
         <!-- Included some JS in the textarea to have it automatically expand: TODO Roman, is there a better place for this script? -->
-        <textarea [formControl]="contentForm" contentEditable=true placeholder="What's today's story?" oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'></textarea>
+        <textarea #content [formControl]="contentForm" contentEditable=true placeholder="What's today's story?"></textarea>
     </div> 
 </div>

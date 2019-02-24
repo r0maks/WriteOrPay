@@ -1,5 +1,5 @@
 import * as fromAppReducer from './app.reducer';
-import { MetaReducer, Store, ActionReducer, Action } from '@ngrx/store';
+import { MetaReducer } from '@ngrx/store';
 import { environment } from '../../environments/environment'; // Angular CLI environment // Angular CLI environment
 
 

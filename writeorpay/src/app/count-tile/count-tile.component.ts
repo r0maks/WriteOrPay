@@ -23,7 +23,7 @@ export class CountTileComponent implements OnInit {
       type: 'doughnut',
       data: {
           datasets: [{
-              data: [80, 20],
+              data: [50, 50],
               backgroundColor: [
                   'rgba(0,104,56)',
                   'rgba(190, 30, 45)'

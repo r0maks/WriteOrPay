@@ -17,6 +17,7 @@ import { ApiService } from './services/api.service';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { TextProcessorService } from './text-logic/text-processor.service';
 import { SidebarActionsComponent } from './sidebar-actions/sidebar-actions.component';
+import { PopoverComponent } from './popover/popover.component';
 
 export const AppRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,6 +37,7 @@ export const AppRoutes: Routes = [
     ActionHeaderComponent,
     LoginComponent,
     HomeComponent,
+    PopoverComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,8 @@ export const AppRoutes: Routes = [
       { enableTracing: true }
     ),
     StoreModule.forRoot(reducers),
+    Effects.forRoot([
+    ]),
   ],
   providers: [
     ApiService,
