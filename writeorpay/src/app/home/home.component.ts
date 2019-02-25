@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 import { AppState } from '../store/reducers';
-import { ApiService } from '../services/api.service';
+import * as AppActions from '../store/app.actions';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private _store: Store<AppState>,
-    private apiService: ApiService,
     ) { }
 
   ngOnInit() {
@@ -31,7 +30,7 @@ export class HomeComponent implements OnInit {
       }
     });
 
-    this.apiService.validateLogin('roy', '123');
+    this._store.dispatch(new AppActions.GetNotes());
   }
 
 }

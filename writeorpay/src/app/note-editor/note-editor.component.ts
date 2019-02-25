@@ -7,6 +7,7 @@ import { AppState } from '../store/reducers';
 import { FormControl } from '@angular/forms';
 import { debounceTime, map } from 'rxjs/operators';
 import { TextProcessorService } from '../text-logic/text-processor.service';
+import { NOTE_DATE_FORMAT } from '../models/note';
 
 @Component({
   selector: 'app-note-editor',
@@ -40,7 +41,7 @@ export class NoteEditorComponent implements OnInit {
 
         const notes$ = this._store.pipe(select(a => a.appState.notes)).subscribe(notes => {
           const note = notes.filter(a => a.id === currentNoteId)[0];
-          this.formattedDate = note.getFormattedUpdatedDate() || this.today.format('dddd, MMMM DD, YYYY');
+          this.formattedDate =  this.today.format(NOTE_DATE_FORMAT);
 
           // make sure emitEvent: false to not create a circular shit storm
           this.contentForm.patchValue(note.content, {emitEvent: false});
@@ -49,7 +50,7 @@ export class NoteEditorComponent implements OnInit {
         });
 
       } else {
-        this.formattedDate = this.today.format('dddd, MMMM DD, YYYY');
+        this.formattedDate = this.today.format(NOTE_DATE_FORMAT);
       }
 
       this.maintainContentHeight();
