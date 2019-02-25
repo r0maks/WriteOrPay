@@ -2,7 +2,6 @@ import Note from '../models/note';
 import * as appActions from './app.actions';
 import { ActionReducer, Action } from '@ngrx/store';
 import * as moment from 'moment';
-import { getTestData } from './testdata'
 
 export interface State {
     notes: Note[],
@@ -107,7 +106,7 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
                 filteredNotes: filteredNotes
             };
         case appActions.NEW_NOTE_SUCCESS:
-            const notes = state.notes;
+            const notes = Object.assign([], state.notes);
             notes.unshift(action.newNote); // unshift because note should always be the first in the array
             return {
                 ...state,
@@ -135,7 +134,7 @@ function noteContains(note: Note, searchTerms: string): boolean {
 
 function sortNotesByLastUpdate(notes: Note[]): Note[] {
     if (notes) {
-        notes = notes.sort((a,b)=> b.lastUpdatedDate.diff(a.lastUpdatedDate))
+        notes = notes.sort((a,b)=> moment(b.lastUpdatedDate).diff(moment(a.lastUpdatedDate)));
     }
     return notes;
 }

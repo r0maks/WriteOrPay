@@ -21,6 +21,7 @@ export class NoteEditorComponent implements OnInit {
   public contentForm: FormControl;
   public titleForm: FormControl;
   public textareaHeight = 200;
+  public currentNoteId: string;
 
   @ViewChild('content') contentArea; 
 
@@ -36,7 +37,7 @@ export class NoteEditorComponent implements OnInit {
     this._store
       .pipe(select(a => a.appState.currentNoteId))
       .subscribe(currentNoteId => {
-      
+        this.currentNoteId = currentNoteId;
         if (currentNoteId) {
 
         const notes$ = this._store.pipe(select(a => a.appState.notes)).subscribe(notes => {
@@ -90,11 +91,11 @@ export class NoteEditorComponent implements OnInit {
 
 
   public contentChanged(content: string){
-    this._store.dispatch(new AppActions.NoteContentChanged(content));
+    this._store.dispatch(new AppActions.NoteContentChanged(this.currentNoteId, content));
   }
 
   public titleChanged(content: string){
-    this._store.dispatch(new AppActions.NoteTitleChanged(content));
+    this._store.dispatch(new AppActions.NoteTitleChanged(this.currentNoteId, content));
   }
 
 }

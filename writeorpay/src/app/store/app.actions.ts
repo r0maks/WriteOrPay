@@ -10,7 +10,13 @@ export const NEW_NOTE_SUCCESS = 'NEW_NOTE_SUCCESS';
 export const NEW_NOTE_ERROR = 'NEW_NOTE_ERROR';
 
 export const NOTE_CONTENT_CHANGED = 'NOTE_CONTENT_CHANGED';
+export const NOTE_CONTENT_CHANGED_SUCCESS = 'NOTE_CONTENT_CHANGED_SUCCESS';
+export const NOTE_CONTENT_CHANGED_ERROR = 'NOTE_CONTENT_CHANGED_ERROR';
+
 export const NOTE_TITLE_CHANGED = 'NOTE_TITLE_CHANGED';
+export const NOTE_TITLE_CHANGED_SUCCESS = 'NOTE_TITLE_CHANGED_SUCCESS';
+export const NOTE_TITLE_CHANGED_ERROR = 'NOTE_TITLE_CHANGED_ERROR';
+
 export const SEARCH_TOGGLED = 'SEARCH_TOGGLED';
 export const SEARCH_CHANGED = 'SEARCH_CHANGED';
 export const SEARCH_CLEARED = 'SEARCH_CLEARED';
@@ -52,12 +58,31 @@ export class NewNoteSuccess implements Action {
 
 export class NoteContentChanged implements Action {
   readonly type = NOTE_CONTENT_CHANGED;
-  constructor(public content: string) { }
+  constructor(public noteId: string, public content: string) { }
 }
+export class NoteContentChangedSuccess implements Action {
+  readonly type = NOTE_CONTENT_CHANGED_SUCCESS;
+  constructor() { }
+}
+export class NoteContentChangedError implements Action {
+  readonly type = NOTE_CONTENT_CHANGED_ERROR;
+  constructor() { }
+}
+
 export class NoteTitleChanged implements Action {
   readonly type = NOTE_TITLE_CHANGED;
-  constructor(public title: string) { }
+  constructor(public noteId: string, public title: string) { }
 }
+export class NoteTitleChangedSuccess implements Action {
+  readonly type = NOTE_TITLE_CHANGED_SUCCESS;
+  constructor() { }
+}
+export class NoteTitleChangedError implements Action {
+  readonly type = NOTE_TITLE_CHANGED_ERROR;
+  constructor() { }
+}
+
+
 export class SearchToggled implements Action {
   readonly type = SEARCH_TOGGLED;
   constructor() { }
@@ -78,8 +103,14 @@ export type AppActions
   SelectNote | 
   NewNote |
   NewNoteSuccess |
+  
   NoteContentChanged |
-  NoteTitleChanged | 
+  NoteContentChangedSuccess |
+  NoteContentChangedError |
+
+  NoteTitleChanged |
+  NoteTitleChangedSuccess | 
+  NoteTitleChangedError |
   SearchToggled | 
   SearchChanged |
   SearchCleared |

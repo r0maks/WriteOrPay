@@ -38,7 +38,7 @@ export class NoteListComponent implements OnInit {
 
   getFormattedUpdatedDate(note: Note): string {
     if (note) {
-      moment(note.lastUpdatedDate).format(NOTE_DATE_FORMAT);
+      return moment(note.lastUpdatedDate).format(NOTE_DATE_FORMAT);
     }
     return null;
   }
