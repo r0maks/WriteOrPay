@@ -13,10 +13,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { ApiService } from './services/api.service';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { TextProcessorService } from './text-logic/text-processor.service';
 import { SidebarActionsComponent } from './sidebar-actions/sidebar-actions.component';
+import { PopoverComponent } from './popover/popover.component';
+import { EffectsModule } from '@ngrx/effects';
+import { AppEffects } from './store/app.effects';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { NoteService } from './note.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 export const AppRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -36,6 +43,7 @@ export const AppRoutes: Routes = [
     ActionHeaderComponent,
     LoginComponent,
     HomeComponent,
+    PopoverComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,10 +54,16 @@ export const AppRoutes: Routes = [
       { enableTracing: true }
     ),
     StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([
+      AppEffects
+    ]),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [
-    ApiService,
-    TextProcessorService
+    NoteService,
+    TextProcessorService,
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })

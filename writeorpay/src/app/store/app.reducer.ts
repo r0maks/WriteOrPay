@@ -2,7 +2,6 @@ import Note from '../models/note';
 import * as appActions from './app.actions';
 import { ActionReducer, Action } from '@ngrx/store';
 import * as moment from 'moment';
-import { getTestData } from './testdata'
 
 export interface State {
     notes: Note[],
@@ -14,7 +13,7 @@ export interface State {
 };
 
 export const initialState: State = {
-    notes: getTestData(),
+    notes: [],
     filteredNotes: null,
     contentExpanded: false,
     currentNoteId: null,
@@ -29,6 +28,11 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
             return {
                 ...state,
                 contentExpanded: !state.contentExpanded
+            };
+        case appActions.GET_NOTES_SUCCESS:
+            return {
+                ...state,
+                notes: action.notes
             };
         case appActions.NOTE_CONTENT_CHANGED:
             const allNotes = Object.assign([], state.notes);
@@ -101,17 +105,13 @@ export const reducer: ActionReducer<State> = (state: State = initialState, actio
                 searchTerms: action.searchTerms,
                 filteredNotes: filteredNotes
             };
-        case appActions.NEW_NOTE:
-            const newDate = moment();
-            const note = new Note();
-            note.createdDate = newDate;
-            note.lastUpdatedDate = newDate;
-            const notes = state.notes;
-            notes.unshift(note); // unshift because note should always be the first in the array
+        case appActions.NEW_NOTE_SUCCESS:
+            const notes = Object.assign([], state.notes);
+            notes.unshift(action.newNote); // unshift because note should always be the first in the array
             return {
                 ...state,
                 notes: notes,
-                currentNoteId: note.id,
+                currentNoteId: action.newNote.id,
             };
         default:
             return state;
@@ -134,7 +134,7 @@ function noteContains(note: Note, searchTerms: string): boolean {
 
 function sortNotesByLastUpdate(notes: Note[]): Note[] {
     if (notes) {
-        notes = notes.sort((a,b)=> b.lastUpdatedDate.diff(a.lastUpdatedDate))
+        notes = notes.sort((a,b)=> moment(b.lastUpdatedDate).diff(moment(a.lastUpdatedDate)));
     }
     return notes;
 }

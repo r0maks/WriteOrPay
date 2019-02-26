@@ -3,7 +3,9 @@ import { Store, select } from '@ngrx/store';
 import { AppState } from '../store/reducers';
 import * as AppActions from "../store/app.actions";
 import { Observable } from 'rxjs';
-import Note from '../models/note';
+import Note, { NOTE_DATE_FORMAT } from '../models/note';
+import * as moment from 'moment';
+import { Moment } from 'moment';
 
 @Component({
   selector: 'app-note-list',
@@ -27,11 +29,18 @@ export class NoteListComponent implements OnInit {
   }
 
   newNote(){
-    this._store.dispatch(new AppActions.NewNote());
+    this._store.dispatch(new AppActions.NewNote(new Note()));
   }
 
   selectNote(noteId: string) {
     this._store.dispatch(new AppActions.SelectNote(noteId));
+  }
+
+  getFormattedUpdatedDate(note: Note): string {
+    if (note) {
+      return moment(note.lastUpdatedDate).format(NOTE_DATE_FORMAT);
+    }
+    return null;
   }
 
 }

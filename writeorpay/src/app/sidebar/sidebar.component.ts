@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import * as AppActions from "../store/app.actions";
 import { Store } from '@ngrx/store';
 import { AppState } from '../store/reducers';
+import Note from '../models/note';
 
 @Component({
   selector: 'app-sidebar',
@@ -16,6 +17,6 @@ export class SidebarComponent implements OnInit {
   }
 
   newNote() {
-    this._store.dispatch(new AppActions.NewNote());
+    this._store.dispatch(new AppActions.NewNote(new Note()));
   }
 }
