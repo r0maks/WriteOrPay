@@ -12,5 +12,4 @@ export const environment = {
     storageBucket: "writeorpay.appspot.com",
     messagingSenderId: "386462008604"
   }
-  
 };
